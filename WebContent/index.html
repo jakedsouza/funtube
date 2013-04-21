@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title></title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+</style>
+<link rel="stylesheet" href="css/bootstrap.css">
+
+<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.css">
+<!-- <link rel="stylesheet" href="css/theme/style.css" type="text/css" -->
+<!-- 	media="screen" /> -->
+
+<link rel="stylesheet" href="css/jquery.pnotify.default.css">
+</link>
+<link rel="stylesheet" href="js/noty/themes/default.css">
+</link>
+<!-- <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet"> -->
+<!-- </link> -->
+<link href="css/jquery.mCustomScrollbar.css" rel="stylesheet"
+	type="text/css" />
+
+<link rel="stylesheet" href="css/main.css">
+<!-- Fav and touch icons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144"
+	href="apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114"
+	href="apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"
+	href="apple-touch-icon-57x57-precomposed.png">
+<link rel="apple-touch-icon-precomposed"
+	href="apple-touch-icon-57-precomposed.png">
+<link rel="shortcut icon" href="favicon.ico">
+<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+<!-- <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet"> -->
+<!-- <script src="http://vjs.zencdn.net/c/video.js"></script> -->
+<link href="js/vendor/video-js/video-js.min.css" rel="stylesheet">
+<script src="js/vendor/video-js/video.min.js"></script>
+</head>
+<body>
+	<!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+		<![endif]-->
+
+	<!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse"
+					data-target=".nav-collapse"> <span class="icon-bar"></span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span>
+				</a> <a class="brand" href="#">Funtube</a>
+
+				<div class="pull-right span2">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">	
+		<div class="row-fluid">
+			<div class="row-fluid span7">
+			<div id="vidweo-player-container" class="" style="border: 1px solid;" >
+				<!--Body content-->
+				<video data-setup='{"techOrder": ["flash"]}' id="video-player" class="video-js vjs-default-skin" controls
+					autoplay preload="auto">
+				</video>
+			</div>
+			<!-- Upload Form-->
+			
+		<div id="upload-from2" class="row-fluid span12" >
+<!-- Form Name -->
+					<legend> Upload New Video <button class="btn" id="show-hide-video-upload-form"><i id="show-hide-video-upload-icon"class="icon-chevron-up"></i></button></legend>
+					
+			<form id="fileupload" class="form-horizontal">
+				<fieldset>					
+					<!-- Text input-->
+					<div class="control-group">
+						<label class="control-label">Title</label>
+						<div class="controls">
+							<input id="videoTitle" name="videoTitle" type="text"
+								placeholder="Video Title" class=""
+								required="required">
+							<p class="help-block">Enter the title for the video</p>
+						</div>
+					</div>
+
+					<!-- Textarea -->
+					<div class="control-group">
+						<label class="control-label">Description</label>
+						<div class="controls">
+							<textarea id="videoDescription" name="videoDescription"
+								placeholder="Video Description" required="required"></textarea>
+						</div>
+					</div>
+
+					<!-- File Button -->
+					<div class="control-group">
+						<label class="control-label">File</label>
+						<div class="controls">
+							<input id="videoFile" name="videoFile" class=""
+								type="file" accept="video/*" required="required">
+						</div>
+					</div>
+
+					<!-- Button (Double) -->
+					<div class="control-group">
+						<label class="control-label"></label>
+						<div class="controls">
+							<a id="uploadBtn"  class="btn btn-primary">Upload</a>
+							<a id="resetBtn" class="btn btn-danger">Reset</a>
+							<a id="closeUploadFormBtn"  class="btn ">Close</a>
+
+						</div>
+					</div>
+					<!-- Progress Bar-->
+					<div id="uploadProgress" class="progress progress-info">
+						<div id="uploadBar" class="bar" style="width: 0%"></div>
+					</div>
+				</fieldset>
+			</form>
+
+		</div>
+		<!-- End Upload Form -->
+			
+			</div>
+			<div class="span5" style="">
+				<!--Sidebar content-->
+				<div id="latest-videos-row">
+					<div class="row span12">
+						<h2 class="span7">Top Rated Videos</h2>
+						<a id="latest-videos-spinner-btn" class="span4 btn  pull-right" style="margin-top:10px">
+							<i id="latest-videos-spinner" class="icon-repeat"></i> Refresh</a>
+					</div>
+					<!-- Spinner for latest videos -->
+					<!--<div id="latest-videos-spinner">
+					<i class="icon-refresh icon-spin icon-4x pull-center"></i>
+					</div> -->
+					<div >
+					<ul id="latest-videos-content" class="media-list">
+					</ul>
+					</div>
+					<div id="latest-videos-pagination" class="pagination"></div>
+				</div>
+			</div>
+		</div>
+			</div>
+	<hr>
+
+	<footer>
+		<p>&copy; Mihir Valotia NYU Poly 2013</p>
+		<p>&copy; Jake Dsouza NYU Poly 2013</p>
+		<a href="https://github.com/jakedsouza/funtube">Fork Me on Github</a>		
+	</footer>
+
+	<!-- /container -->
+
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> -->
+	<script>
+		window.jQuery
+				|| document
+						.write('<script src="js/vendor/jquery-1.9.1.js"><\/script>')
+	</script>
+	<script src="js/vendor/jquery-1.9.1.js"></script>
+
+<script src="http://jquery-ui.googlecode.com/svn/tags/latest/ui/jquery.effects.core.js"></script>
+<script src="http://jquery-ui.googlecode.com/svn/tags/latest/ui/jquery.effects.slide.js"></script>
+	<!-- noty -->
+	<script src="js/vendor/bootstrap.min.js"></script>
+<!-- 		<script type="text/javascript" src="js/noty/promise.js"></script>	 -->
+	<script type="text/javascript" src="js/noty/jquery.noty.js"></script>
+	<script type="text/javascript" src="js/noty/layouts/top.js"></script>
+	<script type="text/javascript" src="js/noty/layouts/topLeft.js"></script>
+	<script type="text/javascript" src="js/noty/layouts/topRight.js"></script>
+	<script type="text/javascript" src="js/noty/layouts/bottomLeft.js"></script>
+	<script type="text/javascript" src="js/noty/layouts/bottomRight.js"></script>
+	<script type="text/javascript" src="js/noty/layouts/bottomCenter.js"></script>
+	<script type="text/javascript" src="js/noty/themes/default.js"></script>
+	
+	<!-- End Noty -->
+	<script src="holder.js"></script>
+	<script type="text/javascript" src="js/vendor/jquery.bootpag.min.js"></script>
+
+	<script src="js/vendor/mustache.js"></script>
+	<script src="js/vendor/jquery.raty.js"></script>
+	<script src="js/vendor/jquery.mustache.js"></script>
+	<script src="js/vendor/jquery.pnotify.js"></script>
+
+	<script src="js/vendor/jquery.validate.min.js"></script>
+	
+	<script src="js/upload.js"></script>
+
+	<script src="js/plugins.js"></script>
+	<script src="js/latestvideos.js"></script>
+
+	<script src="js/main.js"></script>
+
+	<script>
+		// var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+		// ( function(d, t) {
+		// var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+		// g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+		// s.parentNode.insertBefore(g, s)
+		// }(document, 'script'));
+	</script>
+</body>
+</html>

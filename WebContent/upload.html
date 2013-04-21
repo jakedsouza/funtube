@@ -1,0 +1,44 @@
+
+<form id="fileupload" method="post" enctype="multipart/form-data"
+	class="form-horizontal">
+	<legend> Video Information </legend>
+	<div class="control-group">
+		<label class="control-label" for="videoTitle">Title</label>
+		<div class="controls">
+			<input type="text" id="videoTitle" name="videoTitle"
+				placeholder="Video Title" required />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="videoDescription">Description</label>
+		<div class="controls">
+			<textarea id="videoDescription" name="videoDescription" required
+				placeholder="Video Description"></textarea>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="videoFile">File</label>
+		<div class="controls">
+			<input type="file" name="videoFile" id="videoFile" required="required" accept="video/*"/>
+		</div>
+	</div>
+	<div class="control-group">
+		<div class="controls">
+			<button id="uploadBtn" type="button" name="submit"
+				class="btn btn-primary">Upload</button>
+			<button id="resetBtn" type="button" name="clear"
+				class="btn btn-danger">Reset</button>
+		</div>
+	</div>
+	<div id="progress" class="progress">
+		<div id="uploadBar" class="bar" style="width: 0%"></div>
+	</div>
+</form>
+
+
+		<script src="js/vendor/jquery.validate.min.js"></script>
+
+		<script src="js/upload.js"></script>
+
+
+

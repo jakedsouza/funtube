@@ -1,0 +1,15 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+video {
+  width: 100%    !important;
+  height: auto   !important;
+}
+
+.center {
+     float: none;
+     margin-left: auto;
+     margin-right: auto;
+}

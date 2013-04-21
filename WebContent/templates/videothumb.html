@@ -1,0 +1,40 @@
+<script id="video-thumb" type="text/html">
+<li class="media well well-large">
+	<div class="pull-left" href="#">
+		<img class="media-object img-polaroid videoThumbnail" src={{s3URLThumbnail}} style="cursor: pointer;">
+		<div class="s3URL" style="display: none;">
+			{{s3URL}}
+		</div>
+    	<div class="media-heading videoTitle" style="display: none;">{{videoTitle}}</div>
+
+	</div>
+	<div class="media-body">
+		<div class="btn-group pull-right btn-group-vertical">
+			<a class="btn btn-small videoPlay"><i class="icon-play"> </i> </a>
+			<a class="btn btn-small videoDelete"><i class="icon-trash"> </i> </a>
+		</div>
+		<h4 class="media-heading videoTitle">{{videoTitle}}</h4>
+		<div class="s3URL"style="display: none;">
+			{{s3URL}}
+		</div>
+		<div class="s3Name"style="display: none;">
+			{{s3Name}}
+		</div>
+		<div class="videoDescripton text-info">
+			{{description}}
+		</div>
+		<hr/>
+		<div class="star span4"></div>
+		<div class="totalScore"style="display: none;">
+			{{totalScore}}
+		</div>
+		<div class="totalScoreCount"style="display: none;">
+			{{totalScoreCount}}
+		</div>
+		<div class="uploadDate span4 text-right pull-right muted">
+			{{uploadDate}}
+		</div>
+	</div>
+</li>
+</script>
+
